@@ -1,6 +1,7 @@
 import 'package:audio_player/models/song.dart';
 import 'package:flutter/material.dart';
 
+
 class PlayListProvider extends ChangeNotifier {
   final List<Song> _playList = [
     Song(
@@ -31,4 +32,18 @@ class PlayListProvider extends ChangeNotifier {
 
   List<Song> get playList => _playList;
   int? get currentSongIndex => _currentSongIndex;
+
+  /* 
+
+  SETTERS
+
+   */
+
+  set currentSongIndex(int? newIndex) {
+    //  update the song index
+    _currentSongIndex = newIndex;
+
+    notifyListeners();
+  }
 }
+
